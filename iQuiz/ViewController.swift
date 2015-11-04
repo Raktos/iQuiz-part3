@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    //@IBOutlet weak var tableView: UITableView!
+    
     private let subjects = ["Mathematics", "Marvel Super Heroes", "Science"]
     
     private let descriptions = ["Maths quizzes on maths.", "Superhero quizzes on Marvel.", "Science quizzes on science."]
@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,13 +44,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell!.imageView?.image = UIImage(named: /*subjects[indexPath.row]*/"image.jpg")
         return cell!
     }
-
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75
+    }
+    
     @IBAction func settingsPress(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Settings", message: "SETTINGS GO HERE", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
         alert.addAction(alertAction)
         presentViewController(alert, animated: true) { () -> Void in }
     }
-
 }
-
