@@ -14,6 +14,7 @@
 		9DF5DF2B1BE98671003308DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5DF291BE98671003308DA /* LaunchScreen.storyboard */; };
 		9DF5DF361BE98671003308DA /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF351BE98671003308DA /* iQuizTests.swift */; };
 		9DF5DF411BE98671003308DA /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF401BE98671003308DA /* iQuizUITests.swift */; };
+		9DF5DF4F1BE98B30003308DA /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5DF4E1BE98B30003308DA /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9DF5DF3C1BE98671003308DA /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5DF401BE98671003308DA /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		9DF5DF421BE98671003308DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF5DF4E1BE98B30003308DA /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../../image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				9DF5DF221BE98671003308DA /* ViewController.swift */,
 				9DF5DF241BE98671003308DA /* Main.storyboard */,
 				9DF5DF271BE98671003308DA /* Assets.xcassets */,
+				9DF5DF4E1BE98B30003308DA /* image.jpg */,
 				9DF5DF291BE98671003308DA /* LaunchScreen.storyboard */,
 				9DF5DF2C1BE98671003308DA /* Info.plist */,
 			);
@@ -232,6 +235,7 @@
 				9DF5DF2B1BE98671003308DA /* LaunchScreen.storyboard in Resources */,
 				9DF5DF281BE98671003308DA /* Assets.xcassets in Resources */,
 				9DF5DF261BE98671003308DA /* Main.storyboard in Resources */,
+				9DF5DF4F1BE98B30003308DA /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
