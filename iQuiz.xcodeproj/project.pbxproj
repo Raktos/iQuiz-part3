@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D35E21B1BF2C13800EE2C4C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */; };
 		9DF5DF211BE98671003308DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF201BE98671003308DA /* AppDelegate.swift */; };
 		9DF5DF231BE98671003308DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF221BE98671003308DA /* ViewController.swift */; };
 		9DF5DF261BE98671003308DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5DF241BE98671003308DA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9DF5DF1D1BE98671003308DA /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5DF201BE98671003308DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF5DF221BE98671003308DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				9DF5DF291BE98671003308DA /* LaunchScreen.storyboard */,
 				9DF5DF2C1BE98671003308DA /* Info.plist */,
 				9DF5DF501BE9912C003308DA /* image.jpg */,
+				9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				9DF5DF231BE98671003308DA /* ViewController.swift in Sources */,
 				9DF5DF211BE98671003308DA /* AppDelegate.swift in Sources */,
+				9D35E21B1BF2C13800EE2C4C /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +492,7 @@
 				9DF5DF471BE98671003308DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DF5DF481BE98671003308DA /* Build configuration list for PBXNativeTarget "iQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				9DF5DF4A1BE98671003308DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DF5DF4B1BE98671003308DA /* Build configuration list for PBXNativeTarget "iQuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				9DF5DF4D1BE98671003308DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
