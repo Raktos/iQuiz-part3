@@ -17,6 +17,8 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
+        
         navItemQuizTitle.title = currQuiz
         questionLabel.text = "Question \(questionNum)"
         answerButtons = [ans1, ans2, ans3, ans4]
@@ -28,16 +30,10 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
+    @IBAction func quitPress(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("quitSegue", sender: nil)
     }
+    
     @IBAction func answerPress(sender: UIButton) {
         sender.selected = true
         for button in answerButtons {
@@ -48,9 +44,30 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func continuePress(sender: UIButton) {
-        self.questionNum++
+        var selectedButton:UIButton? = nil
+        for button in answerButtons {
+            if button.selected {
+                selectedButton = button
+            }
+        }
         
-        self.performSegueWithIdentifier("correctIncorrectSegue", sender: self)
+        if selectedButton != nil {
+            self.performSegueWithIdentifier("correctIncorrectSegue", sender: selectedButton!)
+        }
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "correctIncorrectSegue" {
+            let destinationVC:CorrectIncorrectViewController = segue.destinationViewController as! CorrectIncorrectViewController
+            
+            destinationVC.questionNum = self.questionNum
+            destinationVC.correctNum = self.correctNum
+            destinationVC.currQuiz = self.currQuiz
+            destinationVC.answer = (sender!.titleLabel!!.text)!
+        }
     }
     
     @IBOutlet weak var navItemQuizTitle: UINavigationItem!
