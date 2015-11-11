@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D35E21B1BF2C13800EE2C4C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */; };
+		9D35E21D1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */; };
 		9DF5DF211BE98671003308DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF201BE98671003308DA /* AppDelegate.swift */; };
 		9DF5DF231BE98671003308DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5DF221BE98671003308DA /* ViewController.swift */; };
 		9DF5DF261BE98671003308DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF5DF241BE98671003308DA /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectIncorrectViewController.swift; sourceTree = "<group>"; };
 		9DF5DF1D1BE98671003308DA /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5DF201BE98671003308DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF5DF221BE98671003308DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				9DF5DF2C1BE98671003308DA /* Info.plist */,
 				9DF5DF501BE9912C003308DA /* image.jpg */,
 				9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */,
+				9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF5DF231BE98671003308DA /* ViewController.swift in Sources */,
+				9D35E21D1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift in Sources */,
 				9DF5DF211BE98671003308DA /* AppDelegate.swift in Sources */,
 				9D35E21B1BF2C13800EE2C4C /* QuestionViewController.swift in Sources */,
 			);

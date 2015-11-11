@@ -12,13 +12,14 @@ class QuestionViewController: UIViewController {
     
     var currQuiz = ""
     var questionNum = 1
-    var answers : [UIButton] = []
+    var correctNum = 0
+    var answerButtons : [UIButton] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navItemQuizTitle.title = currQuiz
         questionLabel.text = "Question \(questionNum)"
-        answers = [ans1, ans2, ans3, ans4]
+        answerButtons = [ans1, ans2, ans3, ans4]
         // Do any additional setup after loading the view.
     }
 
@@ -37,6 +38,21 @@ class QuestionViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
     }
+    @IBAction func answerPress(sender: UIButton) {
+        sender.selected = true
+        for button in answerButtons {
+            if button != sender {
+                button.selected = false
+            }
+        }
+    }
+    
+    @IBAction func continuePress(sender: UIButton) {
+        self.questionNum++
+        
+        self.performSegueWithIdentifier("correctIncorrectSegue", sender: self)
+    }
+    
     @IBOutlet weak var navItemQuizTitle: UINavigationItem!
     @IBOutlet weak var questionLabel: UILabel!
     

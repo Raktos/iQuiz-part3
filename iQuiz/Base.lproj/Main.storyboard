@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="1252" y="429"/>
         </scene>
-        <!--Title-->
+        <!--QuizTitle-->
         <scene sceneID="kvp-Ay-0EY">
             <objects>
                 <viewController id="Axp-ng-xAI" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,14 +111,9 @@
                                 <state key="normal" title="Answer1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RO-br-qiF">
-                                <rect key="frame" x="0.0" y="222" width="600" height="72"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Answer2">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <connections>
+                                    <action selector="answerPress:" destination="Axp-ng-xAI" eventType="touchUpInside" id="Yq9-Ia-vto"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64F-Uh-OcB">
                                 <rect key="frame" x="0.0" y="302" width="600" height="72"/>
@@ -127,6 +122,9 @@
                                 <state key="normal" title="Answer3">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="answerPress:" destination="Axp-ng-xAI" eventType="touchUpInside" id="5Z1-Ft-34q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDa-RA-38k">
                                 <rect key="frame" x="0.0" y="382" width="600" height="72"/>
@@ -134,11 +132,28 @@
                                 <state key="normal" title="Answer4">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="answerPress:" destination="Axp-ng-xAI" eventType="touchUpInside" id="6CF-CC-zkS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1e-ea-RY5">
                                 <rect key="frame" x="0.0" y="462" width="600" height="72"/>
                                 <color key="backgroundColor" red="0.26253492718436766" green="1" blue="0.62866106237744179" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continuePress:" destination="Axp-ng-xAI" eventType="touchUpInside" id="PtU-j7-dyM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RO-br-qiF">
+                                <rect key="frame" x="0.0" y="222" width="600" height="72"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Answer2">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerPress:" destination="Axp-ng-xAI" eventType="touchUpInside" id="3tO-oE-aaU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,7 +183,7 @@
                             <constraint firstItem="ggJ-le-mAf" firstAttribute="centerX" secondItem="m6R-X2-zr2" secondAttribute="centerX" id="zcU-fl-HGB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="iUp-77-aGi"/>
+                    <navigationItem key="navigationItem" title="QuizTitle" id="iUp-77-aGi"/>
                     <connections>
                         <outlet property="ans1" destination="ggJ-le-mAf" id="ha8-Hb-CE4"/>
                         <outlet property="ans2" destination="7RO-br-qiF" id="V10-bi-hYk"/>
@@ -176,11 +191,30 @@
                         <outlet property="ans4" destination="SDa-RA-38k" id="3fu-kV-SGF"/>
                         <outlet property="navItemQuizTitle" destination="iUp-77-aGi" id="HmP-ds-8Et"/>
                         <outlet property="questionLabel" destination="8bf-ok-D0N" id="BTh-qX-OIH"/>
+                        <segue destination="rZA-EA-Bhh" kind="show" identifier="correctIncorrectSegue" id="saO-fx-jEN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oox-Ga-TTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2010" y="429"/>
+        </scene>
+        <!--Correct Incorrect View Controller-->
+        <scene sceneID="ZDp-NN-eav">
+            <objects>
+                <viewController id="rZA-EA-Bhh" customClass="CorrectIncorrectViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Myb-h7-L3F"/>
+                        <viewControllerLayoutGuide type="bottom" id="HaG-iC-9Mz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WW0-6v-AK9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1w-A3-v3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2791" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e38-NH-E9y">
