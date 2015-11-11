@@ -20,13 +20,13 @@ class CorrectIncorrectViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
         
-        correctLabel.text = "Incorrect!"
+        correctLabel.text = "You got it wrong!"
         questionLabel.text = "Question \(questionNum)"
-        answerLabel.text = answer
+        correctAnswerLabel.text = "Correct Answer: Answer1"
         
         if answer == "Answer1" {
             correctNum++
-            correctLabel.text = "Correct!"
+            correctLabel.text = "You got it right!"
         }
     }
 
@@ -68,5 +68,5 @@ class CorrectIncorrectViewController: UIViewController {
     @IBOutlet weak var correctLabel: UILabel!
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var correctAnswerLabel: UILabel!
 }

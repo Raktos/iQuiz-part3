@@ -242,7 +242,7 @@
                                     <action selector="nextPress:" destination="rZA-EA-Bhh" eventType="touchUpInside" id="d02-kH-L7G"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXk-S3-Nkh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CorrectAnswer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXk-S3-Nkh">
                                 <rect key="frame" x="0.0" y="138" width="600" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,7 +273,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answerLabel" destination="BXk-S3-Nkh" id="Jiw-tU-kxU"/>
+                        <outlet property="correctAnswerLabel" destination="BXk-S3-Nkh" id="FzK-Ow-3FG"/>
                         <outlet property="correctLabel" destination="NRw-db-m9L" id="yus-ew-VOj"/>
                         <outlet property="questionLabel" destination="bN5-qR-OWI" id="ORy-Vt-jkw"/>
                         <segue destination="Axp-ng-xAI" kind="show" identifier="nextQuestionSegue" id="QhW-13-Le2"/>
@@ -375,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="saH-lg-Elq"/>
-        <segue reference="jtc-T2-IbC"/>
+        <segue reference="BDx-Jf-1dN"/>
+        <segue reference="QhW-13-Le2"/>
     </inferredMetricsTieBreakers>
 </document>
