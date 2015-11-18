@@ -10,18 +10,29 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var currQuiz = ""
-    var questionNum = 1
-    var correctNum = 0
+    //var currQuiz = ""
+    //var questionNum = 1
+    //var correctNum = 0
     var answerButtons : [UIButton] = []
+    
+    var currQuiz:Quiz? = nil
+    var question:Question? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         
-        navItemQuizTitle.title = currQuiz
-        questionLabel.text = "Question \(questionNum)"
-        answerButtons = [ans1, ans2, ans3, ans4]
+        navItemQuizTitle.title = currQuiz!.title
+        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)"
+        
+        question = currQuiz!.getCurrentQuestion()
+        
+        ans1Button!.titleLabel?.text = question!.ans1.text
+        ans2Button!.titleLabel?.text = question!.ans2.text
+        ans3Button!.titleLabel?.text = question!.ans3.text
+        ans4Button!.titleLabel?.text = question!.ans4.text
+        
+        answerButtons = [ans1Button, ans2Button, ans3Button, ans4Button]
         // Do any additional setup after loading the view.
     }
 
@@ -63,8 +74,6 @@ class QuestionViewController: UIViewController {
         if segue.identifier == "correctIncorrectSegue" {
             let destinationVC:CorrectIncorrectViewController = segue.destinationViewController as! CorrectIncorrectViewController
             
-            destinationVC.questionNum = self.questionNum
-            destinationVC.correctNum = self.correctNum
             destinationVC.currQuiz = self.currQuiz
             destinationVC.answer = (sender!.titleLabel!!.text)!
         }
@@ -73,8 +82,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var navItemQuizTitle: UINavigationItem!
     @IBOutlet weak var questionLabel: UILabel!
     
-    @IBOutlet weak var ans1: UIButton!
-    @IBOutlet weak var ans2: UIButton!
-    @IBOutlet weak var ans3: UIButton!
-    @IBOutlet weak var ans4: UIButton!
+    @IBOutlet weak var ans1Button: UIButton!
+    @IBOutlet weak var ans2Button: UIButton!
+    @IBOutlet weak var ans3Button: UIButton!
+    @IBOutlet weak var ans4Button: UIButton!
 }

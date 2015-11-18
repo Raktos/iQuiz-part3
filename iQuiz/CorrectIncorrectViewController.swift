@@ -9,20 +9,21 @@
 import UIKit
 
 class CorrectIncorrectViewController: UIViewController {
-
-    var questionNum = 1
-    var correctNum = 0
-    var currQuiz = ""
     var answer = ""
+    
+    var currQuiz:Quiz? = nil
+    var question:Question? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
         
+        question = currQuiz?.getCurrentQuestion()
+        
         correctLabel.text = "You got it wrong!"
-        questionLabel.text = "Question \(questionNum)"
-        correctAnswerLabel.text = "Correct Answer: Answer1"
+        questionLabel.text = question!.text
+        correctAnswerLabel.text = question.answers[question!.correctAnswer]
         
         if answer == "Answer1" {
             correctNum++

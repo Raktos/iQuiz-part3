@@ -10,13 +10,15 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //@IBOutlet weak var tableView: UITableView!
     
-    private let subjects = ["Mathematics", "Marvel Super Heroes", "Science"]
+    //private let subjects = ["Mathematics", "Marvel Super Heroes", "Science"]
     
-    private let descriptions = ["Maths quizzes on maths.", "Superhero quizzes on Marvel.", "Science quizzes on science."]
+    //private let descriptions = ["Maths quizzes on maths.", "Superhero quizzes on Marvel.", "Science quizzes on science."]
     
-    private let simpleTableIdentifier = "SimpleTableIdentifier"
+    //private let simpleTableIdentifier = "SimpleTableIdentifier"
     
-    private var currQuiz = ""
+    private var currQuiz:Quiz? = nil
+    
+    private let quizzes:[Quiz] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
+        return quizzes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,8 +45,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //let image = UIImage(named: "star")
         //cell!.imageView?.image = image
         
-        cell!.textLabel?.text = subjects[indexPath.row]
-        cell!.detailTextLabel?.text = descriptions[indexPath.row]
+        cell!.textLabel?.text = quizzes[indexPath.row].title
+        cell!.detailTextLabel?.text = quizzes[indexPath.row].desc
         cell!.imageView?.image = UIImage(named: /*subjects[indexPath.row]*/"image.jpg")
         return cell!
     }
@@ -61,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.currQuiz = subjects[indexPath.row]
+        self.currQuiz = quizzes[indexPath.row]
         
         self.performSegueWithIdentifier("showQuestionsSegue", sender: self)
     }
