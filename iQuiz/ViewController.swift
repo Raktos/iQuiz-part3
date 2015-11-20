@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
+        
+        readQuizzesFromJson()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,7 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         answers.append(Answer(answerText: answer))
                     }
                     //add this question
-                    let thisQuestion = Question(questionText: question["text"] as! String, ans1: answers[0], ans2: answers[1], ans3: answers[2], ans4: answers[3], correctAnswer: question["answer"] as! Int)
+                    let thisQuestion = Question(questionText: String(question["text"]), ans1: answers[0], ans2: answers[1], ans3: answers[2], ans4: answers[3], correctAnswer: (question["answer"]?.integerValue)!)
                     questions.append(thisQuestion)
                 }
                 //add this quiz

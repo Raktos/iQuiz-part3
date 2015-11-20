@@ -23,14 +23,14 @@ class QuestionViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
         
         navItemQuizTitle.title = currQuiz!.title
-        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)"
-        
         question = currQuiz!.getCurrentQuestion()
         
-        ans1Button!.titleLabel?.text = question!.ans1.text
-        ans2Button!.titleLabel?.text = question!.ans2.text
-        ans3Button!.titleLabel?.text = question!.ans3.text
-        ans4Button!.titleLabel?.text = question!.ans4.text
+        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)\n\((question?.text)!)"
+        
+        ans1Button!.setTitle(question!.ans1.text, forState: UIControlState.Normal)
+        ans2Button!.setTitle(question!.ans2.text, forState: UIControlState.Normal)
+        ans3Button!.setTitle(question!.ans3.text, forState: UIControlState.Normal)
+        ans4Button!.setTitle(question!.ans4.text, forState: UIControlState.Normal)
         
         answerButtons = [ans1Button, ans2Button, ans3Button, ans4Button]
         // Do any additional setup after loading the view.

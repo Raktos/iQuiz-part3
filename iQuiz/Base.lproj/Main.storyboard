@@ -161,8 +161,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-ok-D0N">
-                                <rect key="frame" x="0.0" y="74" width="600" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-ok-D0N">
+                                <rect key="frame" x="0.0" y="74" width="600" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -170,6 +170,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8bf-ok-D0N" firstAttribute="height" secondItem="ggJ-le-mAf" secondAttribute="height" id="0Gf-OU-IjJ"/>
                             <constraint firstItem="8bf-ok-D0N" firstAttribute="width" secondItem="m6R-X2-zr2" secondAttribute="width" id="3qy-CP-u59"/>
                             <constraint firstItem="F1e-ea-RY5" firstAttribute="width" secondItem="SDa-RA-38k" secondAttribute="width" id="50f-vY-dsp"/>
                             <constraint firstItem="ggJ-le-mAf" firstAttribute="width" secondItem="m6R-X2-zr2" secondAttribute="width" id="9Hu-lm-HaX"/>
@@ -200,10 +201,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="QuizTitle" id="iUp-77-aGi"/>
                     <connections>
-                        <outlet property="ans1" destination="ggJ-le-mAf" id="ha8-Hb-CE4"/>
-                        <outlet property="ans2" destination="7RO-br-qiF" id="V10-bi-hYk"/>
-                        <outlet property="ans3" destination="64F-Uh-OcB" id="i2x-wi-y6k"/>
-                        <outlet property="ans4" destination="SDa-RA-38k" id="3fu-kV-SGF"/>
+                        <outlet property="ans1Button" destination="ggJ-le-mAf" id="qgz-D1-bdF"/>
+                        <outlet property="ans2Button" destination="7RO-br-qiF" id="fDn-lg-9Cq"/>
+                        <outlet property="ans3Button" destination="64F-Uh-OcB" id="NMF-Po-cgd"/>
+                        <outlet property="ans4Button" destination="SDa-RA-38k" id="WPc-93-v37"/>
                         <outlet property="navItemQuizTitle" destination="iUp-77-aGi" id="HmP-ds-8Et"/>
                         <outlet property="questionLabel" destination="8bf-ok-D0N" id="BTh-qX-OIH"/>
                         <segue destination="rZA-EA-Bhh" kind="show" identifier="correctIncorrectSegue" id="saO-fx-jEN"/>
@@ -248,7 +249,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-qR-OWI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-qR-OWI">
                                 <rect key="frame" x="0.0" y="59" width="600" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -375,7 +376,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BDx-Jf-1dN"/>
+        <segue reference="saH-lg-Elq"/>
         <segue reference="QhW-13-Le2"/>
     </inferredMetricsTieBreakers>
 </document>

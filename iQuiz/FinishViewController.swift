@@ -19,8 +19,9 @@ class FinishViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        finishedLabel.text = "Finished \(currQuiz?.title)"
-        numCorrectLabel.text = "You got \(correctNum) of \(currQuiz?.questions.count) correct"
+        finishedLabel.text = "Finished \((currQuiz?.title)!)"
+        
+        numCorrectLabel.text = "You got \(correctNum) of \((currQuiz?.questions.count)!) correct"
         
         if correctNum == currQuiz?.questions.count {
             descriptiveTextLabel.text = "Perfect!"

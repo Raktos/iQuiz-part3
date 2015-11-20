@@ -22,7 +22,7 @@ class CorrectIncorrectViewController: UIViewController {
         question = currQuiz?.getCurrentQuestion()
         
         correctLabel.text = "You got it wrong!"
-        questionLabel.text = question!.text
+        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)\n\((question?.text)!)"
         correctAnswerLabel.text = question?.getCorrectAnswer()
         
         if answer == question?.getCorrectAnswer() {
@@ -41,7 +41,7 @@ class CorrectIncorrectViewController: UIViewController {
     @IBAction func nextPress(sender: UIButton) {
         currQuiz?.currQuestion++
         
-        if currQuiz?.currQuestion > currQuiz?.questions.count {
+        if currQuiz?.currQuestion >= currQuiz?.questions.count {
             self.performSegueWithIdentifier("finishSegue", sender: self)
         } else {
             self.performSegueWithIdentifier("nextQuestionSegue", sender: self)
