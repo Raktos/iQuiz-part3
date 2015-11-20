@@ -21,7 +21,7 @@ struct Quiz {
         self.questions = questions
     }
     
-    public func getCurrentQuestion() -> Question {
+    internal func getCurrentQuestion() -> Question {
         return questions[currQuestion]
     }
 }
@@ -41,6 +41,16 @@ struct Question {
         self.ans3 = ans3
         self.ans4 = ans4
         self.correctAnswer = correctAnswer
+    }
+    
+    internal func getCorrectAnswer() -> String {
+        switch self.correctAnswer {
+        case 1: return ans1.text
+        case 2: return ans2.text
+        case 3: return ans3.text
+        case 4: return ans4.text
+        default: return ""
+        }
     }
 }
 

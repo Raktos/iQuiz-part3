@@ -10,7 +10,7 @@ import UIKit
 
 class CorrectIncorrectViewController: UIViewController {
     var answer = ""
-    
+    var correctNum = 0
     var currQuiz:Quiz? = nil
     var question:Question? = nil
     
@@ -23,11 +23,13 @@ class CorrectIncorrectViewController: UIViewController {
         
         correctLabel.text = "You got it wrong!"
         questionLabel.text = question!.text
-        correctAnswerLabel.text = question.answers[question!.correctAnswer]
+        correctAnswerLabel.text = question?.getCorrectAnswer()
         
-        if answer == "Answer1" {
+        if answer == question?.getCorrectAnswer() {
             correctNum++
             correctLabel.text = "You got it right!"
+        } else {
+            correctLabel.text = "You got it wrong."
         }
     }
 
@@ -37,9 +39,9 @@ class CorrectIncorrectViewController: UIViewController {
     }
     
     @IBAction func nextPress(sender: UIButton) {
-        questionNum++
+        currQuiz?.currQuestion++
         
-        if questionNum > 20 {
+        if currQuiz?.currQuestion > currQuiz?.questions.count {
             self.performSegueWithIdentifier("finishSegue", sender: self)
         } else {
             self.performSegueWithIdentifier("nextQuestionSegue", sender: self)
@@ -61,7 +63,6 @@ class CorrectIncorrectViewController: UIViewController {
         } else if segue.identifier == "nextQuestionSegue" {
             let destinationVC:QuestionViewController = segue.destinationViewController as! QuestionViewController
             destinationVC.correctNum = self.correctNum
-            destinationVC.questionNum = self.questionNum
             destinationVC.currQuiz = self.currQuiz
         }
     }

@@ -12,7 +12,7 @@ class QuestionViewController: UIViewController {
     
     //var currQuiz = ""
     //var questionNum = 1
-    //var correctNum = 0
+    var correctNum = 0
     var answerButtons : [UIButton] = []
     
     var currQuiz:Quiz? = nil
@@ -74,6 +74,7 @@ class QuestionViewController: UIViewController {
         if segue.identifier == "correctIncorrectSegue" {
             let destinationVC:CorrectIncorrectViewController = segue.destinationViewController as! CorrectIncorrectViewController
             
+            destinationVC.correctNum = self.correctNum
             destinationVC.currQuiz = self.currQuiz
             destinationVC.answer = (sender!.titleLabel!!.text)!
         }

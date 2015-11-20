@@ -14,11 +14,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //private let descriptions = ["Maths quizzes on maths.", "Superhero quizzes on Marvel.", "Science quizzes on science."]
     
-    //private let simpleTableIdentifier = "SimpleTableIdentifier"
-    
+    private let simpleTableIdentifier = "SimpleTableIdentifier"
     private var currQuiz:Quiz? = nil
-    
-    private let quizzes:[Quiz] = []
+    private var quizzes:[Quiz] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +51,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75
+    }
+    
+    func readQuizzesFromJson() {
+        let jsonPath = NSBundle.mainBundle().pathForResource("quizzes", ofType: "json")
+        do {
+            let jsonData = try NSData(contentsOfFile: jsonPath!, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+            let jsonQuizzes = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.AllowFragments) as! [AnyObject]
+            
+            //get each quiz from the JSON
+            for quiz in jsonQuizzes as! [NSDictionary] {
+                //create an array of all the qustions for this quiz
+                var questions = [Question]()
+                //get each question from the JSON
+                for question in quiz["questions"] as! [NSDictionary]{
+                    //create an array of answers for this question
+                    var answers = [Answer]()
+                    //get each answer from the JSON
+                    for answer in question["answers"] as! [String] {
+                        //add this answer
+                        answers.append(Answer(answerText: answer))
+                    }
+                    //add this question
+                    let thisQuestion = Question(questionText: question["text"] as! String, ans1: answers[0], ans2: answers[1], ans3: answers[2], ans4: answers[3], correctAnswer: question["answer"] as! Int)
+                    questions.append(thisQuestion)
+                }
+                //add this quiz
+                let thisQuiz = Quiz(title: quiz["title"] as! String, description: quiz["desc"] as! String, questions: questions)
+                self.quizzes.append(thisQuiz)
+            }
+        } catch {
+            //catch any errors reading the JSON
+        }
     }
     
     @IBAction func settingsPress(sender: UIBarButtonItem) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1A7BB31BFEA849000E07C6 /* quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D1A7BB21BFEA849000E07C6 /* quizzes.json */; };
 		9D35E21B1BF2C13800EE2C4C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */; };
 		9D35E21D1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */; };
 		9D93787D1BFC01EF009909A2 /* QuizStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93787C1BFC01EF009909A2 /* QuizStructs.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D1A7BB21BFEA849000E07C6 /* quizzes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizzes.json; sourceTree = "<group>"; };
 		9D35E21A1BF2C13800EE2C4C /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectIncorrectViewController.swift; sourceTree = "<group>"; };
 		9D93787C1BFC01EF009909A2 /* QuizStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizStructs.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				9D35E21C1BF2CBE600EE2C4C /* CorrectIncorrectViewController.swift */,
 				9DD4D4271BF2F27200D1B854 /* FinishViewController.swift */,
 				9D93787C1BFC01EF009909A2 /* QuizStructs.swift */,
+				9D1A7BB21BFEA849000E07C6 /* quizzes.json */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				9DF5DF2B1BE98671003308DA /* LaunchScreen.storyboard in Resources */,
 				9DF5DF281BE98671003308DA /* Assets.xcassets in Resources */,
 				9DF5DF261BE98671003308DA /* Main.storyboard in Resources */,
+				9D1A7BB31BFEA849000E07C6 /* quizzes.json in Resources */,
 				9DF5DF511BE9912C003308DA /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

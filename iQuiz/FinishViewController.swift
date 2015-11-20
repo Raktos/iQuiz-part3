@@ -11,7 +11,7 @@ import UIKit
 class FinishViewController: UIViewController {
 
     var correctNum = 0
-    var currQuiz = ""
+    var currQuiz:Quiz? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +19,14 @@ class FinishViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        finishedLabel.text = "Finished \(currQuiz)"
-        numCorrectLabel.text = "You got \(correctNum) of 20 correct"
+        finishedLabel.text = "Finished \(currQuiz?.title)"
+        numCorrectLabel.text = "You got \(correctNum) of \(currQuiz?.questions.count) correct"
         
-        if correctNum == 20 {
+        if correctNum == currQuiz?.questions.count {
             descriptiveTextLabel.text = "Perfect!"
-        } else if correctNum > 15 {
+        } else if Double(correctNum) > Double((currQuiz?.questions.count)!) * 0.75 {
             descriptiveTextLabel.text = "Great Job!"
-        } else if correctNum > 10 {
+        } else if Double(correctNum) > Double((currQuiz?.questions.count)!) * 0.5 {
             descriptiveTextLabel.text = "Good Job!"
         } else {
             descriptiveTextLabel.text = "Maybe study more..."
