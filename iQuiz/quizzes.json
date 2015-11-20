@@ -48,19 +48,5 @@
                          ]
               }
               ]
- },
- { "title":"Mathematics", "desc":"Did you pass the third grade?",
- "questions":[
-              {
-              "text":"What is 2+2?",
-              "answer":"1",
-              "answers":[
-                         "4",
-                         "22",
-                         "An irrational number",
-                         "Nobody knows"
-                         ]
-              }
-              ]
  }
  ]

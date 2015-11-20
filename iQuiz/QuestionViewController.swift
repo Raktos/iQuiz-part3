@@ -24,8 +24,9 @@ class QuestionViewController: UIViewController {
         
         navItemQuizTitle.title = currQuiz!.title
         question = currQuiz!.getCurrentQuestion()
+        let questionText:String = (question?.text)!
         
-        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)\n\((question?.text)!)"
+        questionLabel.text = "Question \(currQuiz!.currQuestion + 1)\n\(questionText)"
         
         ans1Button!.setTitle(question!.ans1.text, forState: UIControlState.Normal)
         ans2Button!.setTitle(question!.ans2.text, forState: UIControlState.Normal)

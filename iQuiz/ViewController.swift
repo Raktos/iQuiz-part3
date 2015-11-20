@@ -16,19 +16,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private let simpleTableIdentifier = "SimpleTableIdentifier"
     private var currQuiz:Quiz? = nil
-    private var quizzes:[Quiz] = []
+    private var quizzes:[Quiz] = [Quiz]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
-        
         readQuizzesFromJson()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        readQuizzesFromJson()
+        quizTable.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func readQuizzesFromJson() {
+        quizzes = [Quiz]()
         let jsonPath = NSBundle.mainBundle().pathForResource("quizzes", ofType: "json")
         do {
             let jsonData = try NSData(contentsOfFile: jsonPath!, options: NSDataReadingOptions.DataReadingMappedIfSafe)
@@ -87,12 +93,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func settingsPress(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Settings", message: "SETTINGS GO HERE", preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
-        alert.addAction(alertAction)
-        presentViewController(alert, animated: true) { () -> Void in }
-    }
+//    @IBAction func settingsPress(sender: UIBarButtonItem) {
+//        let alert = UIAlertController(title: "Settings", message: "SETTINGS GO HERE", preferredStyle: UIAlertControllerStyle.Alert)
+//        let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+//        alert.addAction(alertAction)
+//        presentViewController(alert, animated: true) { () -> Void in }
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.currQuiz = quizzes[indexPath.row]
@@ -101,7 +107,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC:QuestionViewController = segue.destinationViewController as! QuestionViewController
-        destinationVC.currQuiz = self.currQuiz
+        if segue.identifier == "showQuestionsSegue" {
+            let destinationVC:QuestionViewController = segue.destinationViewController as! QuestionViewController
+            destinationVC.currQuiz = self.currQuiz
+        }
     }
+    
+    @IBAction func goBack(segue:UIStoryboardSegue) {
+        
+    }
+    @IBOutlet weak var quizTable: UITableView!
 }
